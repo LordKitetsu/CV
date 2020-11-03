@@ -1,0 +1,95 @@
+@import "./utils/variables";
+body {
+    font-family: "Segoe", Tahoma, Geneva, Verdana, sans-serif;
+    background-color: $secondary-color;
+    display: grid;
+    grid-template-columns: 25% auto;
+    grid-template-areas:
+        "picture title"
+        "perso texte"
+        "tech training"
+        "tech training"
+        "global parcours"
+        "global loisirs";
+}
+h1 {
+    font-weight: normal;
+}
+h2 {
+    font-size: 30px;
+    text-transform: uppercase;
+    font-weight: normal;
+}
+
+h3 {
+    font-weight: normal;
+    font-size: 27px;
+}
+h4 {
+    color: $primary-color;
+    font-weight: normal; 
+    font-size: 25px;   
+}
+
+#title, #text, #picture, #perso, #parcours, #tech-skills, #global-skills, #loisirs, #training-info {
+    padding: 10px;
+}
+
+#title {
+    grid-area: title;
+    
+}
+#text {
+    grid-area: texte;    
+    border-left: solid $primary-color 1px;
+}
+
+#picture {
+    grid-area: picture;
+    
+}
+.avatar {
+    
+    border-radius: 100%;
+    border: black 1px solid; 
+    justify-content: center;
+}
+
+.name {
+    color: $primary-color;
+}
+
+#perso {
+    grid-area: perso;
+    
+}
+
+#parcours {
+    grid-area: parcours;
+    border-top: $border-color solid 1px;
+    border-left: solid 1px $primary-color;    
+}
+
+#loisirs {
+    grid-area: loisirs;
+    border-top: $border-color solid 1px;
+    border-left: solid 1px $primary-color;
+    
+}
+#tech-skills {
+    grid-area: tech;
+    border-top: $border-color solid 1px;
+    
+}
+#global-skills {
+    grid-area: global;
+    border-top: $border-color solid 1px;
+    
+    
+}
+#training-info {
+    grid-area: training;
+    border-top: $border-color solid 1px;
+    border-left: solid 1px $primary-color;
+    
+}
