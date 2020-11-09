@@ -5,6 +5,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="./css/style.css" type="text/css">
+    
     <title>CV de Patchane-Lacane Kevin</title>
 </head>
 
@@ -35,7 +36,7 @@
         </p>
     </section>
 
-    <section id="parcours">
+    <section id="parcours" v-on:click="sayWork()">
         <h2>Parcours professionnel</h2>
         <div>
             <h4>2013-2019</h4>
@@ -58,12 +59,11 @@
 
     </section>
 
-    <section id="loisirs">
+    <section id="loisirs" v-on:click="sayHobbies()">
         <h2>Temps Libre</h2>
         <p>Jeux vidéo : Action/RPG, Rogue-lite/like, jeux solos</p>
         <p>Lecture : Science-fiction en tout genre, fantasy dans toutes ses formes</p>
         <p>Ciné / Séries : Même chose, j'aime le fantastique et l'humour</p>
-
     </section>
 
     <section id="tech-skills">
@@ -74,14 +74,14 @@
         <img src="./img/vueLogo.png" alt="Vue.js">
         <img src="./img/nodeLogo.png" alt="Node.js">
         <img src="./img/npmLogo.png" alt="NPM">
-        <img src="./img/githubLogo.png" alt="GitHub">
+        <a href="https://github.com/LordKitetsu?tab=repositories"><img src="./img/githubLogo.png" alt="GitHub"></a>
         <img src="./img/sassLogo.png" alt="Sass">
         <img src="./img/mongodbLogo.png" alt="MongoDB">
         
 
     </section>
 
-    <section id="global-skills">
+    <section id="global-skills" v-on:click="saySkills()">
         <h2>Compétences</h2>
         <p>Anglais parlé, lu et écrit</p>
         <p>Gestion d'équipe</p>
@@ -94,7 +94,7 @@
 
     </section>
 
-    <section id="training-info">
+    <section id="training-info" v-on:click="sayTrain()">
         <h2>Formations</h2>
         <div>
             <h4>2020</h4>
@@ -120,7 +120,71 @@
         </div>
 
     </section>
+    <script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
+    <script>
+        const app = new Vue ({
+                el: '#loisirs',
+                data: {
+                        sayHobbies() {
+                            alert(
+`Je pourrais parler pendant des jours entiers de mes loisirs, de mon temps libre, de ce que je compte faire, de ce que j'ai fait. 
+                            
+Si vous voulez plus de détails, c'est donc la partie qui suit qui va vous intéresser. Mais plutôt que de vous raconter ma vie plus en détails, je vais vous faire une liste non-exhaustive des livres que vous pourrez ajouter à votre bibliothèque. Gagner la Guerre, de Jean-Philippe Jaworski qui est à moitié moins connu que ce qu'il devrait être. L'oeuvre intégrale de John Scalzi qui est un auteur de science-fiction prolifique et qualitatif. Mention spéciale pour Le Vieil Homme et la Guerre qui, même sans être féru de science-fiction, mérite au moins un bon point pour la qualité de son adaptation.`);
+                        }
+                }
+        })
+        const appTraining = new Vue ({
+            el: '#training-info',
+            data: {
+                sayTrain() {
+                    alert(
+`Vous avez accès à mes projets sur GitHub. Vous avez donc une idée de ce qui m'a été demandé pendant ma formation.
+Mais je vais m'efforcer de détailler les compétences demandées dans chacun d'entre eux.
 
+Le premier projet, bien que très simple, m'a permis d'apprendre à gérer mon temps efficacement.
+Le second à travailler à partir d'une maquette. Savoir l'intégrer et comprendre les bases du HTML et du CSS associés.
+Le troisième initiait à Sass, qui permet un code CSS maintenable et a permis de toucher vaguement aux animations CSS.
+Le quatrième permettait de comprendre ce qu'on attendait pour optimiser un site avec des moteurs de recherches.
+Le cinquième marque mon entrée dans le monde du JavaScript. Il consistait en un basique site de e-commercer. Manipulation du DOM et communication avec une API.
+Le sixième nous lançait sur la création d'un API, avec un serveur Express et une base de données MongoDB.
+Le dernier quand à lui, était un fourre-tout de tous les projets précédents. Le but étant de construire de A à Z un réseau social d'entreprise basé sur Reddit. Construction de l'API, construction du front-end et base de données MySQL.`
+                    )
+                },
+            }
+        })
+        const appWork = new Vue ({
+            el: '#parcours',
+            data: {
+                sayWork() {
+                    alert(
+`J'ai commencé ma vie au travail en bossant chez E.Leclerc. 
+
+Ça n'est que peu intéréssant pour les compétences qui vous intéressent techniquement, en revanche, j'y ai appris beaucoup de choses. 
+Mais ce n'est qu'avec McDonald's qu'elles se sont certifiées. 
+J'ai pris confiance en moi, je sais désormais ce que je vaux. Je ne suis pas l'employé qui va bêtement faire ce qu'on lui demande. 
+J'ai trop souvent été confronté, quand je demande pourquoi une chose est faite de telle ou telle façon, à la paresse intellectuelle qui consiste à dire qu'on a toujours fait comme ça, donc qu'il n'y aucune raison de changer. Ce n'est pas moi. Je vais toujours chercher un moyen d'approfondir les tâches, de les rendre plus faciles, plus automatiques, plus intelligentes.
+
+Si vous cherchez le parfait petit exécutant, je peux remplir cette fonction. A condition que l'éxécution soit faite intelligemment.
+`)
+                },
+            }
+        })
+        const appSkills = new Vue ({
+            el: '#global-skills',
+            data: {
+                saySkills() {
+                    alert(
+`J'ai de nombreuses cordes à mon arc. Certaines utiles. Certaines moins. Mais toutes à votre disposition.
+J'ai travaillé avec des enfants, jeunes et moins jeunes, sous mes ordres à McDo, sous mes conseils et ma surveillance dans des collèges et lycées. 
+Je sais gérer des conflits, classer des tas de choses, faire des emplois du temps, organiser un service, comprendre les failles et les forces des personnes qui sont sous mes ordres ou en collaboration. 
+Je parle anglais (merci les jeux vidéo, sans qui jamais je n'aurais le niveau actuel dans la langue de Shakespeare !), je lis anglais, parfois même je pense anglais.
+J'ai assez d'expérience au travail pour savoir ce que je vaux.
+Je suis drôle. Ça sonne arrogant ? Je le suis un peu aussi. Mais je vous rassure, je sais en jouer.
+Je suis aussi sensible, ce qui dans notre société toujours plus individuelle est indispensable pour bien communiquer avec les personnes variées qui la compose.`)
+                },
+            }
+        })
+    </script>
 </body>
 
 </html>
