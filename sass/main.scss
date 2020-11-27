@@ -93,3 +93,41 @@ h4 {
     border-left: solid 1px $primary-color;
     
 }
+
+@media all and (max-width: 1024px){
+    body {
+        grid-template-columns: 25% auto;
+        grid-template-areas:
+            "picture title"
+            "texte texte"
+            "perso perso"
+            "tech tech"
+            "training training"
+            "global global"
+            "parcours parcours"
+            "loisirs loisirs"
+
+    }
+    #title, #text, #picture, #perso, #parcours, #tech-skills, #global-skills, #loisirs, #training-info {
+        padding: 10px;
+        border: none;
+        border-bottom: solid $border-color 1px;
+    }
+}
+
+@media all and (max-width: 720px) {
+    body {
+        grid-template-columns: auto;
+        grid-template-areas:
+            "picture"
+            "title"
+            "texte"
+            "perso"
+            "tech"
+            "training"
+            "global"
+            "parcours"
+            "loisirs"
+
+    }
+}
